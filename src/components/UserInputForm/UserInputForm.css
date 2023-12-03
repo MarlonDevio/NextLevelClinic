@@ -1,0 +1,35 @@
+.UserInputForm {
+
+    border-radius: 50px;
+    background: linear-gradient(145deg, #202a2e, #1b2327);
+    box-shadow: 33px 33px 66px #1a2125,
+    -33px -33px 66px #232d31;
+    gap: 2rem;
+    width: 100%;
+    padding: 4rem 4rem;
+    align-self: flex-start;
+
+    /*0 0 5px -5px black;*/
+
+    & h2 {
+        color: var(--color-light-grey);
+
+    }
+
+    & .inputLabel {
+
+        /*background: var(--color-light-background);*/
+        border-radius: 50px;
+        background: #1e272b;
+        box-shadow: inset 33px 33px 66px #1a2125,
+        inset -33px -33px 66px #232d31;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    .UserInputForm {
+        grid-template-columns: 1fr;
+
+    }
+}

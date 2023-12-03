@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-grey);
+    padding: 2rem 0;
+    z-index: 1000;
+    position: relative;
+
+    & img {
+        height: 10rem;
+        margin: 0 auto;
+    }
+
+    .sign-out {
+        color: black;
+    }
+}

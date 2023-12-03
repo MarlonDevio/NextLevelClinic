@@ -1,0 +1,48 @@
+.TastePreferenceForm {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #202a2e, #1b2327);
+    box-shadow: 33px 33px 66px #1a2125,
+    -33px -33px 66px #232d31;
+    gap: 2rem;
+    width: 100%;
+    padding: 4rem 4rem;
+    align-self: flex-start;
+    /*align-self: start;*/
+    /*background-color: var(--color-grey-dark);*/
+    /*gap: 2rem;*/
+    /*font-size: 2rem;*/
+    /*border-radius: 10px;*/
+    /*box-shadow: 0px 0px 20px 5px rgba(45, 61, 65, 0.2);*/
+    /*width: 100%;*/
+
+    & h2 {
+        color: var(--color-light-grey);
+
+    }
+
+
+    & input {
+
+
+        /*background: var(--color-light-background);*/
+        border-radius: 50px;
+        background: #1e272b;
+        box-shadow: inset 33px 33px 66px #1a2125,
+        inset -33px -33px 66px #232d31;
+
+        /*background-color: #faf9f7;*/
+        /*border-radius: 10px;*/
+        /*border: 1px solid var(--color-dark);*/
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .TastePreferenceForm {
+        align-self: stretch;
+
+        & label {
+            gap: 1rem;
+            flex-direction: column;
+        }
+    }
+}

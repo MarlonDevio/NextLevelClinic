@@ -1,0 +1,26 @@
+.client_info {
+    color: #faf9f7;
+
+    .color_dark, .color_grey_dark {
+        color: white;
+        font-weight: 700;
+
+        &:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        &:first-child {
+
+            border-radius: 10px 0 0 10px;
+        }
+    }
+
+    .color_dark {
+        background-color: var(--color-dark);
+    }
+
+    .color_grey_dark {
+        background-color: var(--color-grey-dark);
+
+    }
+}

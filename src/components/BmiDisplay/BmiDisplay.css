@@ -1,0 +1,12 @@
+.BmiDisplay {
+
+    & p {
+        align-items: center;
+        font-size: 2rem;
+        font-weight: 600;
+
+        & span {
+            font-size: 3rem;
+        }
+    }
+}

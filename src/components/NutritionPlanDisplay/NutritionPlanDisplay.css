@@ -1,0 +1,4 @@
+.NutritionPlanDisplay {
+    min-height: 25vh;
+    background: var(--color-light-background);
+}
