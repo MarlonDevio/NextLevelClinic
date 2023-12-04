@@ -1,14 +1,14 @@
-import './styles/layouts.css';
+import "./styles/layouts.css";
 import {
   Footer,
   // Body,
   Navigation,
   SignIn,
-  ParticlesComponent
-} from './components/index.js';
-import { useState, useEffect } from 'react';
-import OpenAiGpt from './helpers/OpenAiGpt.js';
-import HomePage from './pages/HomePage/HomePage.jsx';
+  ParticlesComponent,
+} from "./components/index.js";
+import { useState, useEffect } from "react";
+import OpenAiGpt from "./api/OpenAiGpt.js";
+import HomePage from "./pages/HomePage/HomePage.jsx";
 
 function App() {
   const [route, setRoute] = useState(window.location.pathname);
@@ -22,19 +22,19 @@ function App() {
     const handlePopstate = () => {
       setRoute(window.location.pathname);
     };
-    window.addEventListener('popstate', handlePopstate);
+    window.addEventListener("popstate", handlePopstate);
     return () => {
-      window.removeEventListener('popstate', handlePopstate);
+      window.removeEventListener("popstate", handlePopstate);
     };
   }, []);
 
   const handleSignIn = () => {
     // Implementeer hier logica voor het inloggen
     setIsLoggedIn(true); // Gebruiker is ingelogd
-    navigate('/home'); // Navigeer naar de homepagina
+    navigate("/home"); // Navigeer naar de homepagina
   };
   const navigate = (path) => {
-    window.history.pushState({}, '', path);
+    window.history.pushState({}, "", path);
     setRoute(path);
   };
   return (

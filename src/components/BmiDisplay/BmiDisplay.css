@@ -1,12 +1,43 @@
 .BmiDisplay {
+  & p {
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    gap: 1rem;
 
-    & p {
-        align-items: center;
-        font-size: 2rem;
-        font-weight: 600;
-
-        & span {
-            font-size: 3rem;
-        }
+    & span {
+      font-size: 3rem;
+      padding: 1rem 2rem;
+      border-radius: 10px;
     }
+  }
+}
+.black {
+  background-color: var(--color-button-black);
+  box-shadow: var(--box-shadow-button-black);
+}
+
+.dark_red {
+  background-color: var(--color-button-darkred);
+  box-shadow: var(--box-shadow-button-darkred);
+}
+
+.red {
+  background-color: var(--color-button-red);
+  box-shadow: var(--box-shadow-button-red);
+}
+
+.orange {
+  background-color: var(--color-button-orange);
+  box-shadow: var(--box-shadow-button-orange);
+}
+
+.green {
+  background-color: var(--color-button-green);
+  box-shadow: var(--box-shadow-button-green);
+}
+
+.light_blue {
+  background-color: var(--color-button-light-blue);
+  box-shadow: var(--box-shadow-button-light-blue);
 }

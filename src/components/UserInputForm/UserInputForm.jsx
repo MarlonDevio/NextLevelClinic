@@ -5,7 +5,7 @@ import InputFormatter from "../../utils/InputFormatter.js";
 import InputValidator from "../../utils/InputValidator.js";
 import { classifyBMI } from "../../helpers/calcBmi.js";
 
-function UserInputForm({ onFormSubmit, getClientInfo }) {
+function UserInputForm({ onFormSubmit, handleClientInfo }) {
   const [inputFields, setInputFields] = useState({
     name: "",
     age: "",
@@ -32,9 +32,9 @@ function UserInputForm({ onFormSubmit, getClientInfo }) {
     const validator = new InputValidator(formattedData);
     if (validator.validator()) {
       const bmi = classifyBMI(formattedData);
-      console.log(bmi);
+
       onFormSubmit(bmi);
-      getClientInfo(formattedData);
+      handleClientInfo(formattedData);
     }
   };
 

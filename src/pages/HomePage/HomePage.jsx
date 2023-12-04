@@ -1,20 +1,34 @@
 import "./HomePage.css";
 import {
-  // BmiDisplay,
-  HeaderImage,
-  Navigation,
-  NutritionPlanDisplay,
-  SloganTitle,
-  TastePreferenceForm,
-  UserInputForm,
+  NutritionPlanDisplaySection,
+  CustomerInfoSection,
 } from "../../components/index.js";
-import CustomerInfoSection from "./CustomerInfoSection/CustomerInfoSection.jsx";
+import { useState } from "react";
 
 function HomePage() {
+  const [bmiValue, setBmiValue] = useState(null);
+  const [clientInfo, setClientInfo] = useState({});
+
+  const handleFormSubmit = (bmi) => {
+    setBmiValue(bmi);
+  };
+
+  const handleClientInfo = (clientInfo) => {
+    setClientInfo(clientInfo);
+  };
+
   return (
     <main className="HomePage flex-col">
-      <CustomerInfoSection />
-      <NutritionPlanDisplay />
+      <CustomerInfoSection
+        onFormSubmit={handleFormSubmit}
+        clientInfo={clientInfo}
+        bmiValue={bmiValue}
+        handleClientInfo={handleClientInfo}
+      />
+      <NutritionPlanDisplaySection
+        clientInfo={clientInfo}
+        bmiValue={bmiValue}
+      />
     </main>
   );
 }
