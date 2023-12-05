@@ -4,13 +4,13 @@ import {
   TastePreferenceForm,
   UserInputForm,
 } from "../../../components/index.js";
-import { useState } from "react";
 
 function CustomerInfoSection({
-  onFormSubmit,
-  handleClientInfo,
   bmiValue,
   clientInfo,
+  userInputFields,
+  handleSubmit,
+  setTasteUserPreference,
   handlePreferenceSubmit,
 }) {
   return (
@@ -18,10 +18,13 @@ function CustomerInfoSection({
       <div className="container flex-row CustomerInfoSection">
         <HeaderImage bmiValue={bmiValue} firstName={clientInfo.name} />
         <UserInputForm
-          onFormSubmit={onFormSubmit}
-          handleClientInfo={handleClientInfo}
+          handleSubmit={handleSubmit}
+          userInputFields={userInputFields}
         />
-        <TastePreferenceForm handlePreferenceSubmit={handlePreferenceSubmit} />
+        <TastePreferenceForm
+          handlePreferenceSubmit={handlePreferenceSubmit}
+          setTasteUserPreference={setTasteUserPreference}
+        />
       </div>
     </section>
   );

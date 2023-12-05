@@ -2,26 +2,17 @@ import "./TastePreferenceForm.css";
 import { Button } from "../../common/index.js";
 import { useState } from "react";
 
-function TastePreferenceForm({ handlePreferenceSubmit }) {
-  const [preferenceFields, setPreferenceFields] = useState({
-    voorkeurVoedingSmaak: "",
-    voorkeurDrankSmaak: "",
-    voorkeurSmaak: "",
-  });
-
-  const handlePreferenceChange = (e) => {
-    const { name, value } = e.target;
-    setPreferenceFields((prevFields) => ({
-      ...prevFields,
-      [name]: value,
-    }));
-    console.log(JSON.stringify(preferenceFields));
-  };
-
+function TastePreferenceForm({
+  setTasteUserPreference,
+  handlePreferenceSubmit,
+}) {
   return (
     <form
+      onSubmit={(e) => {
+        handlePreferenceSubmit(e);
+      }}
       className="TastePreferenceForm flex-col"
-      onSubmit={handlePreferenceSubmit}
+      // onSubmit={handlePreferenceSubmit}
     >
       <h2>VoedingVoorkeuren</h2>
       <label className="inputLabel">
@@ -29,12 +20,12 @@ function TastePreferenceForm({ handlePreferenceSubmit }) {
           type="text"
           name="voorkeurVoedingSmaak"
           placeholder={"Voorkeur Voeding Smaak"}
-          onChange={handlePreferenceChange}
+          onChange={setTasteUserPreference}
         />
       </label>
       <label className="inputLabel">
         <input
-          onChange={handlePreferenceChange}
+          onChange={setTasteUserPreference}
           type="text"
           name="voorkeurDrankSmaak"
           placeholder={"Voorkeur Drank Smaak"}
@@ -42,9 +33,9 @@ function TastePreferenceForm({ handlePreferenceSubmit }) {
       </label>
       <label className="inputLabel">
         <input
-          onChange={handlePreferenceChange}
+          onChange={setTasteUserPreference}
           type="text"
-          name="voorkeurSmaak"
+          name="voorkeurGerecht"
           placeholder={"Lievelingsgerecht"}
         />
       </label>

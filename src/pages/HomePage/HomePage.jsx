@@ -4,41 +4,67 @@ import {
   CustomerInfoSection,
 } from "../../components/index.js";
 import { useState } from "react";
+import useFormFields from "../../hooks/useFormFields.js";
+import { formatAndValidate } from "../../utils/helpers.js";
+import { classifyBMI } from "../../helpers/calcBmi.js";
 
 function HomePage() {
+  /******* userInputFields for ClientInfo *********/
+  // 1) gets and sets the userInputfields from the UserInputForm on change
+  const [userInputFields, setUserInputFields] = useFormFields({
+    name: "",
+    age: "",
+    weight: "",
+    height: "",
+    gender: "",
+  });
+  const [correctedUserInputFields, setCorrectedUserInputFields] = useState({});
+
+  /*** Taste Preference fields ***/
+  const [userTastePreferenceFields, setUserTastePreferenceFields] =
+    useFormFields({
+      voorkeurVoedingSmaak: "",
+      voorkeurDrankSmaak: "",
+      voorkeurGerecht: "",
+    });
+  const [
+    validatedUserTastePreferenceFields,
+    setValidatedUserTastePreferenceFields,
+  ] = useState({});
+
   const [bmiValue, setBmiValue] = useState(null);
-  const [clientInfo, setClientInfo] = useState({});
-  const [preferences, setPreferences] = useState({});
 
-  // Function to handle the preference submit
-  /* Belongs to tastePreferenceForm */
-  const handlePreferenceSubmit = (preferences) => {
-    setPreferences(preferences);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const correctData = formatAndValidate(userInputFields);
+    if (correctData) {
+      const bmi = classifyBMI(correctData);
+      setBmiValue(bmi);
+      setCorrectedUserInputFields(correctData);
+    }
   };
 
-  // Function to handle the form submit and set the bmi value
-  /* Belongs to UserInputForm */
-  const handleFormSubmit = (bmi) => {
-    setBmiValue(bmi);
-  };
-
-  // Function to handle the client info
-  /* Belongs to UserInputForm */
-  const handleClientInfo = (clientInfo) => {
-    setClientInfo(clientInfo);
+  const handlePreferenceSubmit = (e) => {
+    e.preventDefault();
+    const correctData = formatAndValidate(userTastePreferenceFields);
+    if (correctData) {
+      setValidatedUserTastePreferenceFields(correctData);
+    }
   };
 
   return (
     <main className="HomePage flex-col">
       <CustomerInfoSection
-        onFormSubmit={handleFormSubmit}
-        clientInfo={clientInfo}
+        handleSubmit={handleSubmit}
+        userInputFields={setUserInputFields}
+        clientInfo={correctedUserInputFields}
         bmiValue={bmiValue}
-        handleClientInfo={handleClientInfo}
+        setTasteUserPreference={setUserTastePreferenceFields}
         handlePreferenceSubmit={handlePreferenceSubmit}
       />
       <NutritionPlanDisplaySection
-        clientInfo={clientInfo}
+        preferenceInfo={validatedUserTastePreferenceFields}
+        clientInfo={correctedUserInputFields}
         bmiValue={bmiValue}
       />
     </main>

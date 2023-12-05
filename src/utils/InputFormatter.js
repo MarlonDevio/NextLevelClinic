@@ -21,7 +21,6 @@ class InputFormatter {
   #destructure() {
     const newObject = {};
     for (const key in this.dataObj) {
-      console.log(key);
       if (this.dataObj.hasOwnProperty(key)) {
         // Trims whitespace and checks if the value is numeric,
         // then either converts it to a float or keeps it as is.
