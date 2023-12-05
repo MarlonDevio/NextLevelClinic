@@ -9,6 +9,8 @@ import {
 import { useState, useEffect } from "react";
 import OpenAiGpt from "./api/OpenAiGpt.js";
 import HomePage from "./pages/HomePage/HomePage.jsx";
+import { Form } from "./common/index.js";
+import CustomerDataInputFields from "./constants/customerDataInputFields.js";
 
 function App() {
   const [route, setRoute] = useState(window.location.pathname);
@@ -42,6 +44,7 @@ function App() {
       <ParticlesComponent />
       <Navigation handleSignOut={handleSignOut} />
       <HomePage />
+      {/*<Form headerContent={"Testing"} inputFields={CustomerDataInputFields} />*/}
       {/*{!isLoggedIn && <SignIn handleSignIn={handleSignIn} />}*/}
       {/*{isLoggedIn && (*/}
       {/*  <>*/}

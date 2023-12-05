@@ -19,7 +19,6 @@ function NutritionPlanDisplaySection({ bmiValue, clientInfo }) {
       setGptAnswer(gptInstance.getAnswer);
       setIsLoading(false);
     }
-    console.log("clicked");
   };
   return (
     <section className="NutritionPlanDisplaySection">

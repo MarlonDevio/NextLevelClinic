@@ -11,6 +11,7 @@ function CustomerInfoSection({
   handleClientInfo,
   bmiValue,
   clientInfo,
+  handlePreferenceSubmit,
 }) {
   return (
     <section className="">
@@ -20,7 +21,7 @@ function CustomerInfoSection({
           onFormSubmit={onFormSubmit}
           handleClientInfo={handleClientInfo}
         />
-        <TastePreferenceForm />
+        <TastePreferenceForm handlePreferenceSubmit={handlePreferenceSubmit} />
       </div>
     </section>
   );

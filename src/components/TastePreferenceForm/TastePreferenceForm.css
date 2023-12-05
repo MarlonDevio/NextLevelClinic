@@ -20,20 +20,29 @@
 
     }
 
-
-    & input {
-
-
+    & .inputLabel {
         /*background: var(--color-light-background);*/
         border-radius: 50px;
         background: #1e272b;
         box-shadow: inset 33px 33px 66px #1a2125,
         inset -33px -33px 66px #232d31;
 
-        /*background-color: #faf9f7;*/
-        /*border-radius: 10px;*/
-        /*border: 1px solid var(--color-dark);*/
+        & input {
+            border: none;
+
+            /*background: var(--color-light-background);*/
+            border-radius: 50px;
+            background: #1e272b;
+            box-shadow: inset 33px 33px 66px #1a2125,
+            inset -33px -33px 66px #232d31;
+
+            /*background-color: #faf9f7;*/
+            /*border-radius: 10px;*/
+            /*border: 1px solid var(--color-dark);*/
+        }
     }
+
+
 }
 
 @media screen and (max-width: 860px) {
