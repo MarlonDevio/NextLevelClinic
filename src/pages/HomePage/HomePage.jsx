@@ -11,6 +11,7 @@ import { classifyBMI } from "../../helpers/calcBmi.js";
 function HomePage() {
   /******* userInputFields for ClientInfo *********/
   // 1) gets and sets the userInputfields from the UserInputForm on change
+  // useFormFields custom hook for setting changes
   const [userInputFields, setUserInputFields] = useFormFields({
     name: "",
     age: "",
@@ -35,6 +36,7 @@ function HomePage() {
   const [bmiValue, setBmiValue] = useState(null);
 
   const handleSubmit = (e) => {
+    // Handle submit in the userInputSection
     e.preventDefault();
     const correctData = formatAndValidate(userInputFields);
     if (correctData) {
@@ -45,6 +47,7 @@ function HomePage() {
   };
 
   const handlePreferenceSubmit = (e) => {
+    // Handle submit in the tastePreferenceForm
     e.preventDefault();
     const correctData = formatAndValidate(userTastePreferenceFields);
     if (correctData) {

@@ -1,3 +1,7 @@
 .H2Header {
     color: var(--color-light-grey);
 }
+
+.dark-header {
+    color: var(--color-brand-dark);
+}
