@@ -27,7 +27,7 @@ function NutritionPlanDisplaySection({ bmiValue, clientInfo, preferenceInfo }) {
       voorkeurGerecht: preferenceInfo.voorkeurGerecht,
       voorkeurDrankSmaak: preferenceInfo.voorkeurDrankSmaak,
       voorkeurVoedingSmaak: preferenceInfo.voorkeurVoedingSmaak,
-      doelen: "spiermassa aankomen",
+      doelen: "Gewicht verliezen, spiermassa aankomen",
     };
 
     setIsLoading(true);
