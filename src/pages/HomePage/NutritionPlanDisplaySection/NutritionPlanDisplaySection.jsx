@@ -29,14 +29,12 @@ function NutritionPlanDisplaySection({ bmiValue, clientInfo, preferenceInfo }) {
       voorkeurVoedingSmaak: preferenceInfo.voorkeurVoedingSmaak,
       doelen: "spiermassa aankomen",
     };
-    console.log(userData);
 
     setIsLoading(true);
     const gptInstance = new OpenAiGpt(userData);
     await gptInstance.generateAnswer();
     setGptAnswer(gptInstance.getAnswer);
     setIsLoading(false);
-    console.log(gptAnswer);
   };
 
   return (
@@ -51,6 +49,7 @@ function NutritionPlanDisplaySection({ bmiValue, clientInfo, preferenceInfo }) {
           onClick={handleClick}
           content={"Genereer Next Level Nutrition Plan"}
           className={"btn-generate-dark"}
+          style={{ justifySelf: "center" }}
         />
         {isLoading ? (
           <Loader />

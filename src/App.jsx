@@ -41,18 +41,14 @@ function App() {
   };
   return (
     <>
-      <ParticlesComponent />
-      <Navigation handleSignOut={handleSignOut} />
-      <HomePage />
-      {/*<Form headerContent={"Testing"} inputFields={CustomerDataInputFields} />*/}
-      {/*{!isLoggedIn && <SignIn handleSignIn={handleSignIn} />}*/}
-      {/*{isLoggedIn && (*/}
-      {/*  <>*/}
-
-      {/*<Body />*/}
-      {/*<Footer />*/}
-      {/*</>*/}
-      {/*)}*/}
+      {!isLoggedIn && <SignIn handleSignIn={handleSignIn} />}
+      {isLoggedIn && (
+        <>
+          <ParticlesComponent />
+          <Navigation handleSignOut={handleSignOut} />
+          <HomePage />
+        </>
+      )}
     </>
   );
 }
